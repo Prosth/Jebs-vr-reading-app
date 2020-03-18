@@ -42,7 +42,7 @@ public class letter_spawner : MonoBehaviour
             {
                 spawnPoints[i, j] = Quaternion.AngleAxis(-spawnAngle * i, Vector3.up) * spawn_vec0;
                 spawnPoints[i, j].y =+ spawnHeightOffset + j*spawnGapHeight;
-                //Instantiate(spawnPointer, spawnPoints[i, j], Quaternion.identity);
+                
                 SpawnLetter(true, spawnPoints[i, j]);
             }
         }
@@ -54,10 +54,13 @@ public class letter_spawner : MonoBehaviour
     {
         
     }
+
+
+
     
     void SpawnLetter(bool upperCase, Vector3 spawnPosition)
     {
-        letter_meshes letterScript = Letters[0].GetComponent<letter_meshes>();
+        letter_meshes letterScript = Letters[(int)letters.a].GetComponent<letter_meshes>();
         letterScript.SpawnLetter(upperCase, spawnPosition);
     }
 }
