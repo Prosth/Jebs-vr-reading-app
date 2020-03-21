@@ -9,9 +9,10 @@ public class letter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Blade")
+        if(other.tag == "Blade" || other.tag == "Bullet_Player")
         {
             Instantiate<GameObject>(explosion, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
