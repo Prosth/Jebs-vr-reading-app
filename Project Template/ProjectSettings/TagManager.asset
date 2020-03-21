@@ -12,6 +12,8 @@ TagManager:
   - Bullet_Player
   - Bullet_Enemy
   - Blade_Def
+  - FxTemporaire
+  - BulletPlayer
   layers:
   - Default
   - TransparentFX
