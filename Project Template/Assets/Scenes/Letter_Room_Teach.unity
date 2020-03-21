@@ -2519,6 +2519,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 373636467}
     m_Modifications:
+    - target: {fileID: 1199145827831976891, guid: 7a06d00ceed2481449a86e3912beb8d0,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 4a38ebd3f03b2f94abb53aeb5702276a, type: 2}
     - target: {fileID: 1293614779770187273, guid: 7a06d00ceed2481449a86e3912beb8d0,
         type: 3}
       propertyPath: m_Name
@@ -2578,11 +2583,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5128446638928290117, guid: 7a06d00ceed2481449a86e3912beb8d0,
-        type: 3}
-      propertyPath: shootButton
-      value: 2097152
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a06d00ceed2481449a86e3912beb8d0, type: 3}
