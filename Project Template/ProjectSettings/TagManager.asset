@@ -6,6 +6,12 @@ TagManager:
   tags:
   - GhostPoke
   - Hand
+  - Blade
+  - Letter_Normal
+  - Letter_Flying
+  - Bullet_Player
+  - Bullet_Enemy
+  - Blade_Def
   layers:
   - Default
   - TransparentFX
