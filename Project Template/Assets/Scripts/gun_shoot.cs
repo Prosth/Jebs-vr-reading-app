@@ -24,7 +24,7 @@ public class gun_shoot : MonoBehaviour
         {
             Debug.Log("empty animator");
         }
-            if (OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.LTouch)>0.3f || Input.GetButtonDown("Fire1") )
+            if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch)>0.3f || Input.GetButtonDown("Fire1") )
         {
             Instantiate(bullet, shootAnchor.position, shootAnchor.rotation);
             Instantiate(flash, shootAnchor.position, shootAnchor.rotation);
