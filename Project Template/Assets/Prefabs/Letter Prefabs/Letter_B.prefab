@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4960364832528817314, guid: 04a506506b1aefa458d504e3bc0c282a, type: 3}
+  - {fileID: 2100000, guid: 67015d787c136bd4b9072e5d52c42eb4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -247,6 +247,7 @@ MonoBehaviour:
   audioLetterName: {fileID: 8300000, guid: f91d65267a08748519645f34d4358e48, type: 3}
   audioLetterSound: {fileID: 8300000, guid: a05d082cd207b4b12a47c089be8b7a62, type: 3}
   audioLetterCase: {fileID: 0}
+  audioLetterIntro: {fileID: 0}
 --- !u!114 &5416853936004430341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
+  whatLetter: 
 --- !u!1 &7106262349723862922
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3599766220046492419
 Transform:
   m_ObjectHideFlags: 0
@@ -347,7 +349,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4960364832528817314, guid: 1f05379a72f206641b573196f74c8277, type: 3}
+  - {fileID: 2100000, guid: 67015d787c136bd4b9072e5d52c42eb4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

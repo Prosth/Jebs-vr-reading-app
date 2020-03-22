@@ -28,7 +28,7 @@ public class gun_shoot : MonoBehaviour
         {
             Instantiate(bullet, shootAnchor.position, shootAnchor.rotation);
             Instantiate(flash, shootAnchor.position, shootAnchor.rotation);
-           anim.Play("pistolKick");
+            anim.Play("pistolKick");
         }
     }
 }

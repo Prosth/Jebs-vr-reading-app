@@ -22,8 +22,8 @@ public class letter_spawner : MonoBehaviour
     Vector3[,] spawnPoints;
 
 
-    // Start is called before the first frame update
-    void Start()
+
+    public void CreateGrid(int spawnCols, int spawnRows, float spawnDistance, int letter, float spawnArchAngle = 140, float spawnHeightOffset = 0.5f ,float spawnGapHeight = 0.5f)
     {
         //calculate angle based on how many rows of letters will appear
         float spawnAngle = spawnArchAngle / spawnCols;
@@ -36,31 +36,28 @@ public class letter_spawner : MonoBehaviour
         spawn_vec0 = Quaternion.AngleAxis(-angleOffsetInit, Vector3.up) * spawn_vec0;
 
         //Create vectors alog which the letters will spawn
-        for(int i=0; i<spawnCols; i++)
+        for (int i = 0; i < spawnCols; i++)
         {
             for (int j = 0; j < spawnRows; j++)
             {
                 spawnPoints[i, j] = Quaternion.AngleAxis(-spawnAngle * i, Vector3.up) * spawn_vec0;
-                spawnPoints[i, j].y =+ spawnHeightOffset + j*spawnGapHeight;
-                
-                SpawnLetter(true, spawnPoints[i, j]);
+                spawnPoints[i, j].y = +spawnHeightOffset + j * spawnGapHeight;
+
+                SpawnLetter(letter, true, spawnPoints[i, j]);
+                Debug.Log("entered spawn loop phase");
             }
         }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
 
-
-    
-    void SpawnLetter(bool upperCase, Vector3 spawnPosition)
+    void SpawnLetter(int letter, bool upperCase, Vector3 spawnPosition)
     {
-        letter_meshes letterScript = Letters[(int)letters.a].GetComponent<letter_meshes>();
+        Debug.Log("entered spawn letter phase");
+        letter_meshes letterScript = Letters[letter].GetComponent<letter_meshes>();
         letterScript.SpawnLetter(upperCase, spawnPosition);
     }
+
+
+
+
 }

@@ -13,7 +13,9 @@ TagManager:
   - Bullet_Enemy
   - Blade_Def
   - FxTemporaire
-  - BulletPlayer
+  - lvlmanager
+  - Restart_Level
+  - Main_Menu
   layers:
   - Default
   - TransparentFX

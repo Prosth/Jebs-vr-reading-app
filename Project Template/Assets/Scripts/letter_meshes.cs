@@ -19,7 +19,7 @@ public class letter_meshes : MonoBehaviour
 
         upperCaseMesh.SetActive(upperCase);
         lowerCaseMesh.SetActive(!upperCase);
-
+        Debug.Log("entered  letter script");
         return letter;
     }
 

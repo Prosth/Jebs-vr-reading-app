@@ -7,6 +7,7 @@ public class letter_audio : MonoBehaviour
     public AudioClip audioLetterName;
     public AudioClip audioLetterSound;
     public AudioClip audioLetterCase;
+    public AudioClip audioLetterIntro;
 
     AudioSource audioComponent;
 
@@ -14,14 +15,15 @@ public class letter_audio : MonoBehaviour
     void Start()
     {
         audioComponent = GetComponent<AudioSource>();
-        playSound(audioLetterName);
+       
     }
 
-    void playSound(AudioClip sound)
+    public void playSound(AudioClip sound)
     {
         if (sound)
         {
             audioComponent.PlayOneShot(sound);
         }
+
     }
 }

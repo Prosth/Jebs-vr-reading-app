@@ -148,6 +148,7 @@ MonoBehaviour:
   audioLetterName: {fileID: 8300000, guid: a05d082cd207b4b12a47c089be8b7a62, type: 3}
   audioLetterSound: {fileID: 8300000, guid: f91d65267a08748519645f34d4358e48, type: 3}
   audioLetterCase: {fileID: 0}
+  audioLetterIntro: {fileID: 0}
 --- !u!114 &530757312532270713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
+  whatLetter: 
 --- !u!1 &6621599762121685964
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +250,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4960364832528817314, guid: 2e2ed3afa18540548aca988e671c8e63, type: 3}
+  - {fileID: 2100000, guid: 24222a10bd37f0d4780926bbca257490, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -347,7 +349,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4960364832528817314, guid: 43956d9979b9c6a46a075b700af90f78, type: 3}
+  - {fileID: 2100000, guid: 24222a10bd37f0d4780926bbca257490, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

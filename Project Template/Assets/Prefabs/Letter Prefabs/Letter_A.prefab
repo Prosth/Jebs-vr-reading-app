@@ -346,6 +346,7 @@ MonoBehaviour:
   audioLetterName: {fileID: 0}
   audioLetterSound: {fileID: 8300000, guid: a05d082cd207b4b12a47c089be8b7a62, type: 3}
   audioLetterCase: {fileID: 0}
+  audioLetterIntro: {fileID: 0}
 --- !u!114 &6218529518117454077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,3 +388,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
+  whatLetter: 
