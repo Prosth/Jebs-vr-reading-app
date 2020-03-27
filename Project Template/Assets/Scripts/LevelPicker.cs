@@ -9,6 +9,8 @@ public class LevelPicker : MonoBehaviour
     public string letterLvl;
     public GameObject mng;
 
+
+    //GET THE SCRIPT COMPONENT OF THE LVL MANAGER
     private void Start()
     {
         mngScript = mng.GetComponent("level_manager") as level_manager;
@@ -16,7 +18,7 @@ public class LevelPicker : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        //CHECK FOR LETTER OR RESTART/HOME OBJ PLACED ON THE PICKER
         if(other.tag == "Letter_Normal")
         {
             letter letterScript = other.GetComponent("letter") as letter;
