@@ -14,12 +14,13 @@ public class letter_spawner : MonoBehaviour
 
     //spawn parameters
     public float spawnArchAngle = 140f;
-    public float spawnDistance = 1.00f;
+
     public float spawnHeightOffset = 0.5f;
     public float spawnGapHeight = 0.5f;
 
     Vector3 spawn_vec0;
     Vector3[,] spawnPoints;
+    Vector3 defaultScale = new Vector3(1, 1, 1);
 
 
 
@@ -42,19 +43,18 @@ public class letter_spawner : MonoBehaviour
             {
                 spawnPoints[i, j] = Quaternion.AngleAxis(-spawnAngle * i, Vector3.up) * spawn_vec0;
                 spawnPoints[i, j].y = +spawnHeightOffset + j * spawnGapHeight;
+                CallSpawnLetter(letter, true, spawnPoints[i, j], spawnDistance);
 
-                SpawnLetter(letter, true, spawnPoints[i, j]);
-                Debug.Log("entered spawn loop phase");
             }
         }
     }
 
 
-    void SpawnLetter(int letter, bool upperCase, Vector3 spawnPosition)
+    void CallSpawnLetter(int letter, bool upperCase, Vector3 spawnPosition, float spawnDistance)
     {
-        Debug.Log("entered spawn letter phase");
+        Vector3 spawnScale = defaultScale * (1 + (spawnDistance/5));
         letter_meshes letterScript = Letters[letter].GetComponent<letter_meshes>();
-        letterScript.SpawnLetter(upperCase, spawnPosition);
+        letterScript.SpawnLetter(upperCase, spawnPosition, spawnScale);
     }
 
 

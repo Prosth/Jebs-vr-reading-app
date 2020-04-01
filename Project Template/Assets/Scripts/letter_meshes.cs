@@ -11,17 +11,19 @@ public class letter_meshes : MonoBehaviour
     public GameObject letterPrefab;
     Transform spawnPoint;
 
+    private Vector3 defaultScale = new Vector3(1f, 1f, 1f);
+
     bool upperCase = false;
 
     //SPAWN A LETTER WITH THE CHOSEN CASE
-    public GameObject SpawnLetter(bool upperCase, Vector3 spawnPoint)
+    public GameObject SpawnLetter(bool upperCase, Vector3 spawnPoint, Vector3 spawnScale)
     {
-        GameObject letter = Instantiate(letterPrefab, spawnPoint, Quaternion.identity) as GameObject;
-
+        GameObject spawnedletter = Instantiate(letterPrefab, spawnPoint, Quaternion.identity) as GameObject;
+        spawnedletter.transform.localScale = spawnScale;
         upperCaseMesh.SetActive(upperCase);
         lowerCaseMesh.SetActive(!upperCase);
-        Debug.Log("entered  letter script");
-        return letter;
+        Debug.Log("entered  letter script"+ spawnScale);
+        return spawnedletter;
     }
 
 }

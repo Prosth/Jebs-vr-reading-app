@@ -23,12 +23,11 @@ public class level_manager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
         DontDestroyOnLoad(this.gameObject);
-
         PopulateDictionary();
 
     }
+
 
     // called first
     void OnEnable()
@@ -36,6 +35,7 @@ public class level_manager : MonoBehaviour
         Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
 
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -50,16 +50,14 @@ public class level_manager : MonoBehaviour
             {
                 int currentLetter;
                 LettersDiction.TryGetValue(letterLvl, out currentLetter);
-                letterSpawnScript.CreateGrid(4, 5, 1.2f, currentLetter);
-                letterSpawnScript.CreateGrid(4, 4, 6.2f, currentLetter);
-                letterSpawnScript.CreateGrid(3, 5, 8.2f, currentLetter);
+                letterSpawnScript.CreateGrid(5, 4, 1.2f, currentLetter, 150.00f);
+                letterSpawnScript.CreateGrid(4, 3, 7.0f, currentLetter, 110f, 0.4f, 0.85f);
+                letterSpawnScript.CreateGrid(5, 2, 12f, currentLetter, 90f, 0.5f, 1.00f);
             }
         }
-
-
-
-
     }
+
+
 
     void Start()
     {
@@ -69,10 +67,6 @@ public class level_manager : MonoBehaviour
         
     }
 
-    public void levelLoader(string letterLvl)
-    {
-        
-    }
 
     private void PopulateDictionary()
     {
@@ -108,7 +102,6 @@ public class level_manager : MonoBehaviour
         LettersDiction.Add("D", 29);
         LettersDiction.Add("E", 30);
         LettersDiction.Add("F", 31);
-
     }
    
 }

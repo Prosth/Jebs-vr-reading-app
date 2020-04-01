@@ -6,39 +6,66 @@ public class letter : MonoBehaviour
 {
 
     public GameObject explosion;
-    private bool isItGrabbed = false;
+    private bool wasGrabbed = false;
 
     letter_audio audioScript;
-    OVRGrabbable disGrabScript;
+    OVRGrabbable grabScript;
     public string whatLetter;
+
+    private LetterManager letter_manager;
+
+    public LetterManager letter_Manager
+    {
+        set { letter_manager = value; }
+    }
+
+
+    public void Reset()
+    {
+
+    }
 
     void Start()
     {
-        audioScript = gameObject.GetComponent("letter_audio") as letter_audio;
-        disGrabScript = gameObject.GetComponent("DistanceGrabbable") as OVRGrabbable;
+        initLetter();
     }
 
 
     private void Update()
     {
-        if (disGrabScript != null)
+        if (grabScript != null)
         {
-            if ((disGrabScript.isGrabbed) || (isItGrabbed = !disGrabScript.isGrabbed))
+            if ((grabScript.isGrabbed) && (wasGrabbed =! grabScript.isGrabbed))
             {
-                audioScript.playSound(audioScript.audioLetterIntro);
+                audioScript.playIntroSound();
+                wasGrabbed = true;
             }
-            isItGrabbed = disGrabScript.isGrabbed;
+            else if (!(grabScript.isGrabbed)) {
+                wasGrabbed = false;
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Blade" || other.tag == "Bullet_Player")
+        if (other.tag == "Blade" || other.tag == "Bullet_Player")
         {
-            Instantiate<GameObject>(explosion, transform.position, Quaternion.identity);
+            Instantiate<GameObject>(explosion, transform.position, Quaternion.identity);         
+            audioScript.playDestroySound();
+
             Destroy(gameObject);
         }
     }
 
+    public void initLetter()
+    {
+        // Get Components
+        audioScript = gameObject.GetComponent("letter_audio") as letter_audio;
+        grabScript = gameObject.GetComponent("OVRGrabbable") as OVRGrabbable;
+    }
 
 }
+
+
+
+

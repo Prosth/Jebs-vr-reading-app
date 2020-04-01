@@ -16,7 +16,16 @@ public class LevelPicker : MonoBehaviour
         mngScript = mng.GetComponent("level_manager") as level_manager;
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Update()
+    {
+        if (OVRInput.GetDown(OVRInput.Button.Start))
+        {
+            SceneManager.LoadScene("Main_Hub");
+        }
+            
+    }
+
+        private void OnTriggerEnter(Collider other)
     {
         //CHECK FOR LETTER OR RESTART/HOME OBJ PLACED ON THE PICKER
         if(other.tag == "Letter_Normal")
@@ -28,7 +37,6 @@ public class LevelPicker : MonoBehaviour
         }
         if (other.tag == "Restart_Level")
         {
-
             SceneManager.LoadScene("Letter_Room_Teach");
         }
         if (other.tag == "Main_Menu")

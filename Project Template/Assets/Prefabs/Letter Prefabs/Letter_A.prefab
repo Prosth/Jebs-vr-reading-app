@@ -343,10 +343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f656f0af297763641b45638190377730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioLetterName: {fileID: 0}
+  audioLetterName: {fileID: 8300000, guid: 95bf295e6e91318409a2634c6af858bf, type: 3}
   audioLetterSound: {fileID: 8300000, guid: a05d082cd207b4b12a47c089be8b7a62, type: 3}
   audioLetterCase: {fileID: 0}
-  audioLetterIntro: {fileID: 0}
+  audioLetterIntro: {fileID: 8300000, guid: ca49c87cc3d8748429c2d3337c013771, type: 3}
+  audioLetterDestroy: {fileID: 8300000, guid: 3208d1c722f82fa4e89e8c9b27044f36, type: 3}
 --- !u!114 &6218529518117454077
 MonoBehaviour:
   m_ObjectHideFlags: 0

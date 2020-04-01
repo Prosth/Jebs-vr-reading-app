@@ -8,6 +8,7 @@ public class letter_audio : MonoBehaviour
     public AudioClip audioLetterSound;
     public AudioClip audioLetterCase;
     public AudioClip audioLetterIntro;
+    public AudioClip audioLetterDestroy;
 
     AudioSource audioComponent;
 
@@ -18,12 +19,16 @@ public class letter_audio : MonoBehaviour
        
     }
 
-    public void playSound(AudioClip sound)
+    public void playIntroSound()
     {
-        if (sound)
-        {
-            audioComponent.PlayOneShot(sound);
-        }
+            audioComponent.Stop();
+            audioComponent.PlayOneShot(audioLetterIntro);
+    }
 
+
+    public void playDestroySound()
+    {
+            audioComponent.Stop();
+            audioComponent.PlayOneShot(audioLetterDestroy);
     }
 }

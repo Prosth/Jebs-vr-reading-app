@@ -11,24 +11,59 @@ public class gun_shoot : MonoBehaviour
     Animator anim;
     public OVRInput.Button shootButton;
 
+    private bool stickDownLast = false;
+
+    new BlasterSounds audio;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        audio = GetComponent("BlasterSounds") as BlasterSounds;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        //check for animator
         if (null != anim)
         {
             Debug.Log("empty animator");
         }
-            if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch)>0.3f || Input.GetButtonDown("Fire1") )
+
+        //Check which hand is holding this blaster
+       if (gameObject.name == "SciFiHandGun_Right")
         {
-            Instantiate(bullet, shootAnchor.position, shootAnchor.rotation);
-            Instantiate(flash, shootAnchor.position, shootAnchor.rotation);
-            anim.Play("pistolKick");
+            if (OVRInput.GetDown(OVRInput.RawButton.RIndexTrigger))
+            {
+                Instantiate(bullet, shootAnchor.position, shootAnchor.rotation);
+                Instantiate(flash, shootAnchor.position, shootAnchor.rotation);
+                anim.Play("pistolKick");
+                audio.playRandomBlastSound();
+            }
         }
+
+
+        if (gameObject.name == "SciFiHandGun_Left")
+        {
+            if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+            {
+                Instantiate(bullet, shootAnchor.position, shootAnchor.rotation);
+                Instantiate(flash, shootAnchor.position, shootAnchor.rotation);
+                anim.Play("pistolKick");
+                audio.playRandomBlastSound();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            
+                audio.playRandomBlastSound();
+
+            
+        }
+
+
     }
 }
