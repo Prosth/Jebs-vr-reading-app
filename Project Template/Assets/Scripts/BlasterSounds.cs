@@ -19,5 +19,6 @@ public class BlasterSounds : MonoBehaviour
         audioComponent.Stop();
         AudioClip sound = blasterSound[Random.Range(0, blasterSound.Count)];
         audioComponent.PlayOneShot(sound);
+
     }
 }
