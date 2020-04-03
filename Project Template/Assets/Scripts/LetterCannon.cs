@@ -106,6 +106,7 @@ public class LetterCannon : MonoBehaviour
         GameObject letter_clone = letterMeshesScript.SpawnLetter(true, shootPosition.transform.position, shootPosition.transform.rotation.eulerAngles, new Vector3(1,1,1));
 
         Rigidbody rb = letter_clone.GetComponent<Rigidbody>();
+        rb.useGravity = true;
         Vector3 forceVec = gameObject.transform.forward *-1;
 
         forceVec.y += shootingHight;
