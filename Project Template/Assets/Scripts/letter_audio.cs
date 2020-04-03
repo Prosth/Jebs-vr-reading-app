@@ -31,4 +31,10 @@ public class letter_audio : MonoBehaviour
             audioComponent.Stop();
             audioComponent.PlayOneShot(audioLetterDestroy);
     }
+
+    public void stopSound()
+    {
+        audioComponent.Stop();
+
+    }
 }

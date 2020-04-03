@@ -46,6 +46,7 @@ public class letter : MonoBehaviour
             if (!grabScript.isGrabbed)
             {
                 was_grabbed_before = false;
+                audioScript.stopSound();
             }
         }
     }
