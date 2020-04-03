@@ -16,7 +16,7 @@ public class letter_meshes : MonoBehaviour
     bool upperCase = false;
 
     //SPAWN A LETTER WITH THE CHOSEN CASE
-    public GameObject SpawnLetter(bool upperCase, Vector3 spawnPoint, Vector3 spawnScale)
+    public GameObject SpawnLetter(bool upperCase, Vector3 spawnPoint, Vector3 spawnRotation, Vector3 spawnScale)
     {
         GameObject spawnedletter = Instantiate(letterPrefab, spawnPoint, Quaternion.identity) as GameObject;
         spawnedletter.transform.localScale = spawnScale;

@@ -35,10 +35,12 @@ public class LevelPicker : MonoBehaviour
             mngScript.letterLvl = letterLvl;
             SceneManager.LoadScene("Letter_Room_Teach");
         }
+
         if (other.tag == "Restart_Level")
         {
             SceneManager.LoadScene("Letter_Room_Teach");
         }
+
         if (other.tag == "Main_Menu")
         {
             mngScript.letterLvl = "main";

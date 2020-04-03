@@ -27,7 +27,7 @@ public class gun_shoot : MonoBehaviour
     {
 
         //check for animator
-        if (null != anim)
+        if (null == anim)
         {
             Debug.Log("empty animator");
         }
