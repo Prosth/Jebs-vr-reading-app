@@ -11,6 +11,7 @@ public class level_manager : MonoBehaviour
     Scene LoadedScene;
     letter_spawner letterSpawnScript;
 
+
     public Dictionary<string, int> LettersDiction = new Dictionary<string, int>();
     public GameObject letterSpawner;
 
@@ -30,7 +31,7 @@ public class level_manager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         PopulateDictionary();
         Debug.Log("Dictionary Populated");
-
+        
     }
 
 
@@ -61,8 +62,8 @@ public class level_manager : MonoBehaviour
                 LettersDiction.TryGetValue(letterLvl, out currentLetterInt);
 
                 //Spawn two distant grids of letters
-                letterSpawnScript.CreateGrid(4, 3, 7.0f, currentLetterInt, 110f, 0.4f, 0.85f);
-                letterSpawnScript.CreateGrid(5, 2, 12f, currentLetterInt, 90f, 0.5f, 1.00f);
+                letterSpawnScript.CreateGrid(4, 4, 7.0f, currentLetterInt, 110f, 0.4f, 1.1f);
+                letterSpawnScript.CreateGrid(5, 3, 12f, currentLetterInt, 90f, 0.5f, 1.50f);
             }
         }
     }
