@@ -12,6 +12,8 @@ public class letter : MonoBehaviour
     OVRGrabbable grabScript;
     public string whatLetter;
 
+    private bool was_grabbed_before = false;
+
     private LetterManager letter_manager;
 
     public LetterManager letter_Manager
@@ -33,15 +35,17 @@ public class letter : MonoBehaviour
 
     private void Update()
     {
+
         if (grabScript != null)
         {
-            if ((grabScript.isGrabbed) && (wasGrabbed =! grabScript.isGrabbed))
+            if (grabScript.isGrabbed && !was_grabbed_before)
             {
+                was_grabbed_before = true;
                 audioScript.playIntroSound();
-                wasGrabbed = true;
             }
-            else if (!(grabScript.isGrabbed)) {
-                wasGrabbed = false;
+            if (!grabScript.isGrabbed)
+            {
+                was_grabbed_before = false;
             }
         }
     }
