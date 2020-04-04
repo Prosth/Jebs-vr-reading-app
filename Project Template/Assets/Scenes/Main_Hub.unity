@@ -3835,6 +3835,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1251051279633912942, guid: fe6f6707cb4b4124d9d32dabb5af4a81,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1251051279633912944, guid: fe6f6707cb4b4124d9d32dabb5af4a81,
         type: 3}
       propertyPath: upperCaseMesh
@@ -3850,6 +3855,11 @@ PrefabInstance:
       propertyPath: whatLetter
       value: D
       objectReference: {fileID: 0}
+    - target: {fileID: 2241281786342311248, guid: fe6f6707cb4b4124d9d32dabb5af4a81,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d1c325922182ba04397e74e2bcd582fd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe6f6707cb4b4124d9d32dabb5af4a81, type: 3}
 --- !u!1001 &4888597715245126504

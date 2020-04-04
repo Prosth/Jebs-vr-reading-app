@@ -6,10 +6,10 @@ public class SpawnPointScript : MonoBehaviour
 {
     public List<GameObject> Letters = new List<GameObject>();
 
-    public float spawnDelay = 10f;
-    public float timeBetweenSpawnsMin = 6f;
-    public float timeBetweenSpawnsMax = 9f;
-    public int maxLetters = 20;
+    private float spawnDelay = 10f;
+    private float timeBetweenSpawnsMin = 7f;
+    private float timeBetweenSpawnsMax = 15f;
+    private int maxLetters = 20;
 
     public AudioClip goodHit1;
     public AudioClip goodHit2;

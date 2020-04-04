@@ -690,12 +690,12 @@ PrefabInstance:
     - target: {fileID: 2298755595879682687, guid: d95be5e431d058145a8bdd17e567c8e5,
         type: 3}
       propertyPath: minShootInterval
-      value: 2.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2298755595879682687, guid: d95be5e431d058145a8bdd17e567c8e5,
         type: 3}
       propertyPath: maxShootInterval
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2298755595879682687, guid: d95be5e431d058145a8bdd17e567c8e5,
         type: 3}
@@ -2514,12 +2514,12 @@ PrefabInstance:
     - target: {fileID: 2298755595879682687, guid: d95be5e431d058145a8bdd17e567c8e5,
         type: 3}
       propertyPath: minShootInterval
-      value: 2.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2298755595879682687, guid: d95be5e431d058145a8bdd17e567c8e5,
         type: 3}
       propertyPath: maxShootInterval
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2298755595879682687, guid: d95be5e431d058145a8bdd17e567c8e5,
         type: 3}
@@ -3671,12 +3671,12 @@ PrefabInstance:
     - target: {fileID: 2298755595879682687, guid: d95be5e431d058145a8bdd17e567c8e5,
         type: 3}
       propertyPath: minShootInterval
-      value: 2.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2298755595879682687, guid: d95be5e431d058145a8bdd17e567c8e5,
         type: 3}
       propertyPath: maxShootInterval
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2298755595879682687, guid: d95be5e431d058145a8bdd17e567c8e5,
         type: 3}
