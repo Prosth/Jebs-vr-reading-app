@@ -11,6 +11,8 @@ public class level_manager : MonoBehaviour
     Scene LoadedScene;
     letter_spawner letterSpawnScript;
 
+    public Vector3[,] grid1;
+    public Vector3[,] grid2;
 
     public Dictionary<string, int> LettersDiction = new Dictionary<string, int>();
     public GameObject letterSpawner;
@@ -29,16 +31,13 @@ public class level_manager : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
-        PopulateDictionary();
-        Debug.Log("Dictionary Populated");
-        
+        PopulateDictionary();        
     }
 
 
     // called first
     void OnEnable()
     {
-        Debug.Log("OnEnable called");
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -46,15 +45,10 @@ public class level_manager : MonoBehaviour
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("SCENE LOADED");
-        Debug.Log("OnSceneLoaded: " + scene.name);
-        Debug.Log(mode);
 
         //CHECK IF AT MAIN_HUB SCENE
         if (letterLvl != null)
         {
-            Debug.Log("level: " + letterLvl);
-            Debug.Log("CURRENT LETTER IS: " + currentLetterInt);
             //IF INSIDE LEVEL THEN GENERATE 3 GRIDS OF LETTER SPAWN POINTS AT VARIOUS DISTANCES
             if (!string.Equals(letterLvl, "main"))
             {
@@ -62,8 +56,10 @@ public class level_manager : MonoBehaviour
                 LettersDiction.TryGetValue(letterLvl, out currentLetterInt);
 
                 //Spawn two distant grids of letters
-                letterSpawnScript.CreateGrid(4, 4, 7.0f, currentLetterInt, 110f, 0.4f, 1.1f);
-                letterSpawnScript.CreateGrid(5, 3, 12f, currentLetterInt, 90f, 0.5f, 1.50f);
+
+                grid1 = letterSpawnScript.CreateGrid(4, 4, 7.0f, currentLetterInt, 110f, 0.4f, 1.1f);
+                grid2 =letterSpawnScript.CreateGrid(5, 3, 12f, currentLetterInt, 90f, 0.5f, 1.50f);
+                //letterSpawnScript.starSpawning(grid1, currentLetterInt, 1.1f);
             }
         }
     }
@@ -75,9 +71,6 @@ public class level_manager : MonoBehaviour
         //GET LETTER SPAWNER SCRIPT
         letterSpawnScript = letterSpawner.GetComponent("letter_spawner") as letter_spawner;
         LoadedScene = SceneManager.GetActiveScene();
-        Debug.Log("Active Scene is '" + LoadedScene.name + "'.");
-        Debug.Log("CURRENT LETTER IS 2: " + currentLetterInt);
-
     }
 
     //CREATE A DICTIONARY WITH INTEGER VALUES FOR ALL LETTERS

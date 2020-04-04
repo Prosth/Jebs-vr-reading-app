@@ -421,8 +421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blasterSound:
-  - {fileID: 8300000, guid: bd6f64be6eeef084891fdadda3905b63, type: 3}
-  - {fileID: 8300000, guid: 3d36ce5f43b8d1a4e900cbdff460d6a0, type: 3}
+  - {fileID: 8300000, guid: e8c88699ce2e11f46a19429617bff35b, type: 3}
+  - {fileID: 0}
 --- !u!1 &1293644390617359639
 GameObject:
   m_ObjectHideFlags: 0

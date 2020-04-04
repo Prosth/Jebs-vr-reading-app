@@ -16,6 +16,8 @@ TagManager:
   - lvlmanager
   - Restart_Level
   - Main_Menu
+  - BulletPlayer
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

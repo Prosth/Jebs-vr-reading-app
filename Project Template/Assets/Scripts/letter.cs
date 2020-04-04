@@ -57,7 +57,15 @@ public class letter : MonoBehaviour
         {
             Instantiate<GameObject>(explosion, transform.position, Quaternion.identity);         
             audioScript.playDestroySound();
-
+            SpawnPointScript parentscript = transform.parent.gameObject.GetComponent("SpawnPointScript") as SpawnPointScript;
+            if(whatLetter == parentscript.currentLetterStr)
+            {
+                parentscript.PlayGoodHitSound();
+            }
+            if (whatLetter != parentscript.currentLetterStr)
+            {
+                parentscript.PlayBadHitSound();
+            }
             Destroy(gameObject);
         }
     }

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1888973381252109166}
   - component: {fileID: 6121377823488547478}
   - component: {fileID: 2106659306131506064}
+  - component: {fileID: 5929680810477343214}
   m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
+  m_Name: SpawnPointer
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3657483962698379255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 3.4, y: 3.4, z: 3.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -48,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3657483962698379255}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -93,3 +94,35 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5929680810477343214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3657483962698379255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d9f24329a5ad5249bd51dedf34f03aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Letters:
+  - {fileID: 6548707034351400905, guid: 93b7315c83be9fe479c7ea32441df14c, type: 3}
+  - {fileID: 5820478203194807592, guid: e942f2716bcb47f498d83d2c2a009f17, type: 3}
+  - {fileID: 1363087039941111834, guid: a5e7ea361e3b5144784e5325f81f4174, type: 3}
+  - {fileID: 1251051279633912892, guid: fe6f6707cb4b4124d9d32dabb5af4a81, type: 3}
+  spawnDelay: 3
+  timeBetweenSpawnsMin: 3
+  timeBetweenSpawnsMax: 8
+  maxLetters: 20
+  goodHit1: {fileID: 8300000, guid: 417d7ba02da9b2646a9e9bb991df9f59, type: 3}
+  goodHit2: {fileID: 8300000, guid: 89f7b269f4594464e87e5d8828a2e8c1, type: 3}
+  badHit1: {fileID: 8300000, guid: 8360b29a5da741248a31315ed42294b4, type: 3}
+  SpawnPositions: []
+  EmptySpawnPositions: []
+  letterSpawner: {fileID: 7898833500347860124, guid: 11c013a5c45750647b4e9a2d00813ee3,
+    type: 3}
+  minCorrectLetters: 3
+  maxCorrectLetters: 6
+  currentLetterInt: 0
+  currentLetterStr: 

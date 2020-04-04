@@ -24,10 +24,10 @@ public class LetterCannon : MonoBehaviour
     float shootingHight;
 
     [SerializeField]
-    float minShootInterval = 2;
+    float minShootInterval = 3;
 
     [SerializeField]
-    float maxShootInterval = 5;
+    float maxShootInterval = 7;
 
     private float currentShootInterval = 4;
 
@@ -53,19 +53,14 @@ public class LetterCannon : MonoBehaviour
         //GET LETTER SPAWNER SCRIPT
         letterSpawnScript = letterSpawner.GetComponent("letter_spawner") as letter_spawner;
 
-        //GET THE CURRENT CORRECT LETTER FOR THE LEVEL FROM LEVEL MANAGER   
-        
-    /* //LevelPicker lvlPickerScript = lvlPicker.GetComponent("LevelPicker") as LevelPicker;
-       // lvlLetter = lvlPickerScript.letterLvl;
-       // mngScript.LettersDiction.TryGetValue(mngScript.letterLvl, out currentLetterInt);*/
-        
+        //GET THE CURRENT CORRECT LETTER FOR THE LEVEL FROM LEVEL MANAGER                  
         currentLetterInt = mngScript.currentLetterInt;
 
         //INIT START TIME AND FIRST RANDOM INTERVAL
         startTime = Time.time;
         currentShootInterval = Random.Range(minShootInterval, maxShootInterval);
 
-        Debug.Log("CURRENT CANNON LETTER IS: "+ currentLetterInt + lvlLetter);
+       // Debug.Log("CURRENT CANNON LETTER IS: "+ currentLetterInt + lvlLetter);
 
     }
 
@@ -83,14 +78,15 @@ public class LetterCannon : MonoBehaviour
         if(Time.time - startTime >= countdownBeforeStartShootig)
         {
             startShooting = true;
-            Debug.Log("CURRENT CANNON LETTER IS: " + currentLetterInt);
+
         }
         //SHOOT
         if (startShooting)
         {
             if (Time.time - lastShotTime  >= currentShootInterval)
             {
-                ShootLetter(currentLetterInt, true);
+                int letterToShoot = Random.Range(0,3);
+                ShootLetter(letterToShoot, true);
                 currentShootInterval = Random.Range(minShootInterval, maxShootInterval);
                 lastShotTime = Time.time;
             }
@@ -100,7 +96,7 @@ public class LetterCannon : MonoBehaviour
 
     void ShootLetter(int letter, bool letterCase)
     {
-        float letterScale = 1.5f;
+        float letterScale = 1.6f;
         letter_meshes letterMeshesScript = letterSpawnScript.Letters[letter].GetComponent<letter_meshes>();
 
         GameObject letter_clone = letterMeshesScript.SpawnLetter(true, shootPosition.transform.position, shootPosition.transform.rotation.eulerAngles, new Vector3(1,1,1)* letterScale);
