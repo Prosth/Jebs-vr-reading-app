@@ -15,8 +15,8 @@ public class SpawnPointScript : MonoBehaviour
     public AudioClip goodHit2;
     public AudioClip badHit1;
 
-    public List<GameObject> SpawnPositions = new List<GameObject>();
-    public List<Transform> EmptySpawnPositions = new List<Transform>();
+    //public List<GameObject> SpawnPositions = new List<GameObject>();
+   // public List<Transform> EmptySpawnPositions = new List<Transform>();
 
     public GameObject letterSpawner;
 
@@ -69,9 +69,9 @@ public class SpawnPointScript : MonoBehaviour
         //INIT START TIME AND FIRST RANDOM INTERVAL
         startTime = Time.time;
 
-        SpawnPositions.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
+        //SpawnPositions.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
 
-        totalLettersInGrid = SpawnPositions.Count;
+        //totalLettersInGrid = SpawnPositions.Count;
 
         spawnDelay = Random.Range(3f, 10f);
 
@@ -84,8 +84,8 @@ public class SpawnPointScript : MonoBehaviour
     void Update()
     {
         
-        int emptyPositions = EmptyPositions();
-        Debug.Log("empty: " + emptyPositions +" , Time counddown  " + (Time.time - startTime));
+        //int emptyPositions = EmptyPositions();
+        //Debug.Log("empty: " + emptyPositions +" , Time counddown  " + (Time.time - startTime));
         //WAIT FOR COUNTDOWN BEFORE STARTING
 
         if ((Time.time - startTime) >= spawnDelay)
@@ -161,7 +161,7 @@ public class SpawnPointScript : MonoBehaviour
         cloneLetter.transform.parent = transform;
         cloneLetter.transform.localScale = new Vector3(1, 1, 1);
     }
-
+/*
     public int EmptyPositions()
     {
         int numberOfEmptyPositions = 0;
@@ -201,7 +201,7 @@ public class SpawnPointScript : MonoBehaviour
         } while (number == except);
         return number;
     }
-
+    */
     public void PlayGoodHitSound()
     {
         audioComponent.Stop();

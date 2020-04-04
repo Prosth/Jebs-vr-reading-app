@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4928142093240014292}
   - component: {fileID: 3596410905299140396}
   - component: {fileID: -133903291789981242}
-  - component: {fileID: 3277134095942433034}
   m_Layer: 0
   m_Name: Letter_C_Capital
   m_TagString: Letter_Normal
@@ -210,18 +209,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3277134095942433034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363087039941111834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c427b2b2f0ca7e747b34094c7fbf6b5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6621599762121685964
 GameObject:
   m_ObjectHideFlags: 0

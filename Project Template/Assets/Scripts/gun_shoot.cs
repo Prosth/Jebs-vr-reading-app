@@ -41,6 +41,7 @@ public class gun_shoot : MonoBehaviour
                 Instantiate(flash, shootAnchor.position, shootAnchor.rotation);
                 anim.Play("pistolKick");
                 audio.playRandomBlastSound();
+                PlayShoot(true);
             }
         }
 
@@ -53,6 +54,7 @@ public class gun_shoot : MonoBehaviour
                 Instantiate(flash, shootAnchor.position, shootAnchor.rotation);
                 anim.Play("pistolKick");
                 audio.playRandomBlastSound();
+                PlayShoot(false);
             }
         }
 
@@ -64,6 +66,23 @@ public class gun_shoot : MonoBehaviour
             
         }
 
+         void PlayShoot(bool rightHanded)
+        {
+            if (rightHanded) StartCoroutine(Haptics(0.8f, 0.7f, 0.3f, true, false));
+            else StartCoroutine(Haptics(0.8f, 0.7f, 0.3f, false, true));
+        }
+
+
+        IEnumerator Haptics(float frequency, float amplitude, float duration, bool rightHand, bool leftHand)
+        {
+            if (rightHand) OVRInput.SetControllerVibration(frequency, amplitude, OVRInput.Controller.RTouch);
+            if (leftHand) OVRInput.SetControllerVibration(frequency, amplitude, OVRInput.Controller.LTouch);
+
+            yield return new WaitForSeconds(duration);
+
+            if (rightHand) OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+            if (leftHand) OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
+        }
 
     }
 }
