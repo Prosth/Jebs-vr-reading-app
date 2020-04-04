@@ -100,10 +100,10 @@ public class LetterCannon : MonoBehaviour
 
     void ShootLetter(int letter, bool letterCase)
     {
-
+        float letterScale = 1.5f;
         letter_meshes letterMeshesScript = letterSpawnScript.Letters[letter].GetComponent<letter_meshes>();
 
-        GameObject letter_clone = letterMeshesScript.SpawnLetter(true, shootPosition.transform.position, shootPosition.transform.rotation.eulerAngles, new Vector3(1,1,1));
+        GameObject letter_clone = letterMeshesScript.SpawnLetter(true, shootPosition.transform.position, shootPosition.transform.rotation.eulerAngles, new Vector3(1,1,1)* letterScale);
 
         Rigidbody rb = letter_clone.GetComponent<Rigidbody>();
         rb.useGravity = true;

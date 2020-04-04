@@ -3895,6 +3895,11 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4061346144115578120, guid: 925d8ac5f4eaaf14eb3bf378a7d63aaf,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6414397699753493740, guid: 925d8ac5f4eaaf14eb3bf378a7d63aaf,
         type: 3}
       propertyPath: bgMainMusic
